@@ -16,6 +16,11 @@ data Nat = O | S Nat
 (^) m ^ O = S O
 (^) m ^ (S n) = m * (m ^ n)
 
+(-) :: Nat -> Nat -> Nat
+(-) 0 - m = 0
+(-) m - 0 = m
+(-) (S m) - (S n) = m - n
+
 fib :: Nat -> Nat
 fib O = O
 fib S O = S O
@@ -34,3 +39,11 @@ max (S m) (S n) = S (max m n)
 double :: Nat -> Nat
 double O = O
 double S m = S (S (double m))
+
+pred :: Nat -> Nat
+pred 0 = 0
+pred (S m) = m
+
+fact :: Nat -> Nat
+fact 0 = S0
+fact (S m) = (S m) * fact m
